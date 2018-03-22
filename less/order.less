@@ -1,3 +1,72 @@
-.order {
-  display: none;
+#wrap{
+		display: none;
+		opacity: 0.8;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding: 16px;
+		background-color: rgba(1, 1, 1, 0.725);
+		z-index: 100;
+		overflow: auto;
+	}
+
+	#window{
+		width: 400px;
+		height: 400px;
+		margin: 50px auto;
+		display: none;
+		background: #fff;
+		z-index: 200;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding: 16px;
+	}
+
+	.close{
+		margin-left: 364px;
+		margin-top: 4px;
+		cursor: pointer;
+	}
+
+	.order-title {
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.order-options {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.order-options > p {
+		width: 100%
+	}
+.order-size {
+	width: 30%;
+	border-color: #63d1bb;
+	color: #fff;
+	height: 50px;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 20px;
+	text-transform: uppercase;
+	background-color: #fff;
+	color: black;
 }
+	.order-buy {
+		width: 100%;
+		margin-top: 10px;
+		background-color: #63d1bb;
+		color: #fff;
+		height: 50px;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: uppercase;
+		border: 0;
+
+	}

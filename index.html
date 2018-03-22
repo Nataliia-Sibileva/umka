@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MISHKA</title>
      <link href="css/style.css" rel="stylesheet">
   </head>
@@ -9,45 +10,55 @@
 
     <header class="header">
   	  <div class="header-bg">
-  	  <nav class="main-nav main-nav--closed main-nav--nojs">
-        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
-  	    <div class="main-nav__wrapper">
-  	      <ul class="main-nav__list site-list">
-            <li class="site-list__item header-logo site-list__item--active">
-  	  	  	  <a href=""><img class="header-logo__img" src="img/logo-mobile.svg" alt="MISHKA"></a>
-  	  	    </li>
-  	  	    <li class="site-list__item catalog">
-  	  	  	  <a href="">Каталог товаров</a>
-  	  	    </li>
-  	        <li class="site-list__item by-order">
-  	  	      <a href="">Вязание на заказ</a>
-  	  	    </li>
-            <li class="site-list__item site-list__searh">
-  	  	      <a href=""><span class="visually_hidd">Поиск по сайту</span></a>
-  	  	    </li>
-  	  	    <li class="site-list__item site-list__basket">
-  	  	      <a href="">Корзина: пока пуста</a>
-  	  	    </li>
-            <li class="site-list__item free-delivery">Бесплатная доставка по России</li>
-            <li class="site-list__item site-list__none new">
-  	  	      <a href="">Новые поступления</a>
-  	  	    </li>
-            <li class="site-list__item site-list__none">
-  	  	      <a href="">Распродажа</a>
-  	  	    </li>
-  	  	  </ul>
-        </div>
-  	  </nav>
+        <nav class="main-nav main-nav--closed main-nav--nojs">
+          <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+         <div class="main-nav__wrapper">
+           <ul class="main-nav__list site-list">
+              <li class="site-list__item header-logo site-list__item--active">
+               <a href="index.html"></a>
+             </li>
+             <li class="site-list__item catalog">
+               <a href="catalog.html">Каталог товаров</a>
+             </li>
+             <li class="site-list__item by-order">
+               <a href="form.html">Вязание на заказ</a>
+             </li>
+              <li class="site-list__item site-list__searh">
+                <a href="">
+                  <svg width="20px" height="20px" class="cart-svg__header">
+                    <use xlink:href='img/sprite.svg#search'/>
+                </svg>
+                  <span class="visually_hidd">Поиск по сайту</span></a>
+             </li>
+             <li class="site-list__item site-list__basket">
+               <a href="">
+                 <svg width="20px" height="20px" class="cart-svg__header">
+                   <use xlink:href='img/sprite.svg#cart'/>
+               </svg>
+               <span>Корзина: пока пуста</span></a>
+             </li>
+              <li class="site-list__item free-delivery">Бесплатная доставка по России</li>
+              <li class="site-list__item site-list__none new">
+               <a href="">Новые поступления</a>
+             </li>
+              <li class="site-list__item site-list__none">
+               <a href="">Распродажа</a>
+             </li>
+           </ul>
+          </div>
+       </nav>
   	  <div class="header-main">
   	    <h2 class="header-title">Милые штуки ручной работы для дома</h2>
   	  </div>
     </div>
+    <div class="article">
   	  <a class="header-article interior" href=""><p class="main_text">Предметы  интерьера</p>
          <img class="interior_img" src="img/icon-interior.svg" alt="interior">
       </a>
   	  <a class="header-article toy" href=""><p class="main_text">Детские  игрушки</p>
           <img class="interior_img" src="img/icon-toy.svg" alt="toy">
       </a>
+    </div>
     </header>
 
     <main class="page-main">
@@ -74,21 +85,24 @@
           </div>
         <img class="goods-week-img" src="img/triple-set-mobile@1x.jpg" alt="Вязаные корзинки">
         <p class="price">Цена: 990 руб.</p>
-        <button class="button goods-buy">Заказать</button>
+        <button class="button goods-buy" onclick="show('block')">Заказать</button>
 
-            <div class="order">
+            <div onclick="show('none')" id="wrap"></div>
+            <div class="order order--closed" id="window">
               <h2 class="order-title">Добавить в корзину</h2>
+              <img class="close" onclick="show('none')" src="./img/icon-menu-close.svg">
               <div class="order-options">
               <p>Выберите размер:</p>
-              <button class="button order-size">S</button>
-              <button class="button order-size">M</button>
-              <button class="button order-size">L</button>
-              <button class="button order-buy">Добавить</button>
+              <button class="order-size">S</button>
+              <button class="order-size">M</button>
+              <button class="order-size">L</button>
+              <button class="order-buy">Добавить</button>
             </div>
 
       </section>
 
       <section class="about">
+        <div class="about-wrapper">
       	<h2 class="about-title">Коротко о нас:</h2>
         <div class="about-list">
           <img src="img/icon-feature-flower.svg" alt="" class="about-img">
@@ -114,6 +128,7 @@
           <img src="img/icon-feature-gift.svg" alt="" class="about-img">
       	   <p class="about-point">Поставляется в подарочной упаковке</p>
         </div>
+      </div>
       </section>
 
       <section class="reviews">
@@ -121,39 +136,59 @@
         <div class="reviews__list slider__list">
           <blockquote class="reviews__item slider__item">
             <p class="author_text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
-            <p class="author_name">Анастасия Красильникова <span class="autor-email">@misssssiskras</span></p>
           </blockquote>
+          <p class="author_name">Анастасия Красильникова <span class="autor-email">@misssssiskras</span></p>
           <div class="reviews-button">
             <button class="reviews___prev" type="button"></button>
             <button class="reviews___next" type="button"></button>
           </div>
         </div>
         <div class="reviews-send">
-          <button class="button goods-buy">Написать</button>
+          <button class="button goods-buy__reviews" onClick='location.href="form.html"'>Написать</button>
         </div>
       </section>
     </main>
 
     <section class="contacts">
       <h2 class="contacts-title">Контакты</h2>
-      <p class="contacts-email">e-mail:</p><p class="contacts-email__link"><a href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a></p>
-      <p class="contacts-text">адрес:</p> <p class="contacts-text__adres">г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101</p>
+      <div class="contacts__text">
+        <div class="cont__email">
+          <p class="contacts-email"> e-mail:</p>
+          <p class="contacts-email__link"><a href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a></p>
+        </div>
+        <div class="contacts__info">
+          <p class="contacts-text">адрес:</p>
+          <p class="contacts-text__adres">г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101</p>
+        </div>
+      </div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xfbeb3cbd3eed50c8!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCAxMDEsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sua!4v1507295899992" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      <button class="button contacts-button">Напишите нам</button>
+      <button class="button contacts-button" onClick='location.href="form.html"'>Напишите нам</button>
       </section>
 
     <footer class="page-footer">
-      <a href=""><img class="footer-logo__img" src="img/logo-mobile.svg" alt="MISHKA"></a>
+      <a href="index.html"><img class="footer-logo__img" src="img/logo-footer.png" alt="MISHKA"></a>
       <div class="page-footer__social social">
         <ul class="social__list">
           <li class="social__item social__link--instagram">
-            <a class="social__link" href="https://www.instagram.com/" target="Мы в инстаграме"></a>
+            <a class="social__link" href="https://www.instagram.com/" target="Мы в инстаграме">
+              <svg width="22px" height="22px" class="social_svg">
+	                <use xlink:href='img/sprite-social.svg#instagram'/>
+              </svg>
+            </a>
           </li>
           <li class="social__item social__link--facebook">
-            <a class="social__link" href="" target="Мы в фейсбуке"></a>
+            <a class="social__link" href="" target="Мы в фейсбуке">
+              <svg width="22px" height="22px" class="social_svg">
+	                <use xlink:href='img/sprite-social.svg#facebook'/>
+              </svg>
+            </a>
           </li>
           <li class="social__item social__link--twitter">
-            <a class="social__link" href="" target="Мы в твиттере"></a>
+            <a class="social__link" href="" target="Мы в твиттере">
+              <svg width="22px" height="22px" class="social_svg">
+                  <use xlink:href="img/sprite-social.svg#twitter"></use>
+              </svg>
+            </a>
           </li>
         </ul>
       </div>
@@ -162,22 +197,6 @@
       	<a  class="copyright_link" href=""><img class="copyright_img" src="img/logo-htmlacademy.svg" alt="Academy"></a>
       </div>
     </footer>
-    <script>
-    var navMain = document.querySelector ('.main-nav');
-    var navToggle = document.querySelector('.main-nav__toggle');
-
-    navMain.classList.remove('main-nav--nojs');
-
-    navToggle.addEventListener ('click',
-    function() {
-      if(navMain.classList.contains ('main-nav--closed')) {
-        navMain.classList.remove('main-nav--closed');
-        navMain.classList.add('main-nav--opened');
-      } else {
-        navMain.classList.add('main-nav--closed');
-        navMain.classList.remove('main-nav--opened');
-      }
-    });
-    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

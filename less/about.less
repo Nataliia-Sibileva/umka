@@ -1,9 +1,19 @@
 @media (min-width:320px) {
-.about {
-  margin-left: 30px;
-  margin-right: 30px;
+.about-wrapper {
+  padding-left: 9.3%;
+  padding-right: 9.3%;
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 320px;
+}
+
+ .about::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 7px;
+  background-image: url(../img/zigzag-line-desktop.png);
+  margin-top: 35px;
+  background-repeat: repeat-x;
 }
 .about-title {
   font-weight: bold;
@@ -20,26 +30,35 @@
 }
 
 @media (min-width:768px) {
-.about {
+.about-wrapper {
   margin: auto;
   max-width: 768px;
   display: flex;
   flex-wrap: wrap;
 }
+.about::before {
+  content: "";
+  background-image: url(../img/zigzag-line-tablet.png);
+  height: 17px;
+}
 .about-list {
-  width: 49%;
+  width: 43.5%;
 }
 .about-title {
   width: 100%;
+  padding-left: 6.5%;
 }
 .about-list:nth-of-type(1) {
   order: 1;
+  padding-left: 6.5%;
 }
 .about-list:nth-of-type(2) {
   order: 3;
+  padding-left: 6.5%;
 }
 .about-list:nth-of-type(3) {
   order: 5;
+  padding-left: 6.5%;
 }
 .about-list:nth-of-type(4) {
   order: 2;
@@ -50,4 +69,12 @@
 .about-list:nth-of-type(6) {
   order: 6;
 }
+}
+@media (min-width:1150px) {
+  .about-wrapper {
+    max-width: 1250px;
+    padding-left: 22%;
+    padding-right: 22%;
+  }
+
 }

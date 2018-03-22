@@ -247,9 +247,6 @@
     -ms-flex-pack: center;
     justify-content: center;
     padding-bottom: 20px;
-    background-image: url(../img/logo-mobile.svg);
-    background-repeat: no-repeat;
-    background-position: center;
   }
   .header-logo a {
     width: 100%;
@@ -272,14 +269,11 @@
     padding-bottom: 20px;
     padding-left: 50px;
     background-color: #ffffff;
-    background-image: url(../img/mishka-logo-tablet.png);
-    background-position: 18.5%;
   }
 }
-@media screen and (min-width: 1050px) {
-  .header-logo {
-    background-image: url(../img/mishka-logo-desktop.png);
-    background-size: contain;
+@media (min-width: 1150px) {
+  .header-logo a picture img {
+    padding-left: 15%;
   }
 }
 @media (min-width: 320px) {
@@ -594,7 +588,6 @@
         flex-basis: 165px;
     padding-top: 20px;
     text-align: left;
-    line-height: 60px;
   }
   .header-logo {
     -webkit-box-ordinal-group: 2;
@@ -686,9 +679,14 @@
     max-width: 1250px;
   }
   .site-list__item {
-    min-height: 60px;
-    line-height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-top: 0;
+    margin-bottom: 20px;
   }
   .site-list__none {
     display: -webkit-box;
@@ -699,7 +697,6 @@
             order: 6;
     -ms-flex-preferred-size: 17.6%;
         flex-basis: 17.6%;
-    line-height: 40px;
   }
   .free-delivery {
     -webkit-box-ordinal-group: 9;
@@ -708,7 +705,6 @@
     padding-right: 8%;
     -ms-flex-preferred-size: 52%;
         flex-basis: 52%;
-    line-height: 40px;
   }
   .catalog {
     -webkit-box-ordinal-group: 2;
@@ -1316,20 +1312,6 @@
     margin: 0 auto;
     margin-top: 30px;
   }
-  .item-img {
-    width: 260px;
-    height: 196px;
-    margin: 0 auto;
-  }
-  .img__01 {
-    background-image: url(../img/photo-hare-mobile@1x.jpg);
-  }
-  .img__02 {
-    background-image: url(../img/photo-toys-mobile@1x.jpg);
-  }
-  .img__03 {
-    background-image: url(../img/photo-bowl-mobile@1x.jpg);
-  }
   .item-link {
     text-align: center;
   }
@@ -1390,19 +1372,6 @@
     margin: 0 auto;
     padding-bottom: 50px;
   }
-  .item-img {
-    width: 335px;
-    height: 335px;
-  }
-  .img__01 {
-    background-image: url(../img/photo-1-tablet.png);
-  }
-  .img__02 {
-    background-image: url(../img/photo-2-tablet.png);
-  }
-  .img__03 {
-    background-image: url(../img/photo-3-tablet.png);
-  }
 }
 @media (min-width: 1150px) {
   .page-main {
@@ -1432,26 +1401,13 @@
   }
   .item-info {
     border: 1px solid #f1f1f1;
-    width: 87%;
+    width: 95%;
   }
   .item__title {
     height: 50px;
   }
   .item__info {
     height: 50px;
-  }
-  .item-img {
-    width: 313px;
-    height: 462px;
-  }
-  .img__01 {
-    background-image: url(../img/photo-1-desktop.png);
-  }
-  .img__02 {
-    background-image: url(../img/photo-2-desktop.png);
-  }
-  .img__03 {
-    background-image: url(../img/photo-3-desktop.png);
   }
 }
 @media (min-width: 320px) {
